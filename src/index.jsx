@@ -9,15 +9,30 @@ const App = () => {
   const [blueValue, setBlueValue] = useState("");
 
   return (
-    <div class="color-panel">
+    <div className="color-panel">
       <h1>Mixér barev</h1>
-      <div class="sliders">
-        <ColorSlider colorName="červená" baseColor="red" />
-        <ColorSlider colorName="zelená" baseColor="green" />
-        <ColorSlider colorName="modrá" baseColor="blue" />
+      <div className="sliders">
+        <ColorSlider
+          colorName="červená"
+          baseColor="red"
+          onValueChange={setRedValue}
+          colorValue={redValue}
+        />
+        <ColorSlider
+          colorName="zelená"
+          baseColor="green"
+          onValueChange={setGreenValue}
+          colorValue={greenValue}
+        />
+        <ColorSlider
+          colorName="modrá"
+          baseColor="blue"
+          onValueChange={setBlueValue}
+          colorValue={blueValue}
+        />
       </div>
       <div
-        class="color-box"
+        className="color-box"
         id="color-box"
         style={{
           backgroundColor: `rgb(${redValue}, ${greenValue}, ${blueValue}`,
